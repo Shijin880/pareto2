@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pareto Chart Generator</title>
+</head>
+<body>
+    <h1>Pareto Chart Generator</h1>
+    <form method="post">
+        <label for="categories">Enter categories separated by commas:</label><br>
+        <input type="text" id="categories" name="categories" required><br><br>
+
+        <label for="values">Enter values separated by commas:</label><br>
+        <input type="text" id="values" name="values" required><br><br>
+
+        <label for="categories_label">Enter categories label:</label><br>
+        <input type="text" id="categories_label" name="categories_label" required><br><br>
+
+        <label for="values_label">Enter values label:</label><br>
+        <input type="text" id="values_label" name="values_label" required><br><br>
+
+        <label for="title">Enter title for the chart:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="font_size">Enter x-axis font size:</label><br>
+        <input type="number" id="font_size" name="font_size" required><br><br>
+
+        <input type="submit" value="Generate Chart">
+    </form>
+
+    {% if plot_url %}
+    <h2>Your Pareto Chart:</h2>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Pareto Chart">
+    {% endif %}
+</body>
+</html>
